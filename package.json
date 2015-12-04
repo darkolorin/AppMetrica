@@ -1,0 +1,12 @@
+{
+  "name": "AppMetrica",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "react-native": "^0.16.0",
+    "url": "^0.11.0"
+  }
+}
