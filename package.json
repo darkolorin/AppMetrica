@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "react-native": "^0.16.0",
-    "url": "^0.11.0"
+    "react-native-device-info": "^0.5.1",
+    "url": "^0.11.0",
+    "form-urlencoded": "^0.1.4"
   }
 }
