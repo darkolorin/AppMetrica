@@ -9,6 +9,8 @@ var url = require('url');
 var config = require('./config/config.js');
 var DeviceInfo = require('react-native-device-info');
 var formurlencoded = require('form-urlencoded');
+var token = '';
+var Home = require('./app/home')
 
 var {
   AppRegistry,
@@ -41,10 +43,9 @@ var AppMetrica = React.createClass({
     render: function() {
 
     if (this.state.login) {
+      console.log(token)
         return (
-          <View style = {styles.container}>
-            <Text style = {styles.text}> {this.state.token} </Text>
-          </View>
+          <Home />
         );
     }
 
@@ -86,7 +87,8 @@ var AppMetrica = React.createClass({
         body: postObj
       }).then((response) => response.json())
         .then((responseData) => {
-          console.log(responseData);
+          token = responseData.access_token;
+          console.log(token);
           this.setState({
             login: true,
             token: responseData.access_token
@@ -113,3 +115,5 @@ var styles = StyleSheet.create({
 
 
 AppRegistry.registerComponent('AppMetrica', () => AppMetrica);
+
+module.exports = AppMetrica;
